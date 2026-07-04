@@ -15,4 +15,6 @@ O script:
 
 # Resultado
 
-![Meu GIF Animado](boxplot_precos_por_categoria.png)
+![BoxPlot](boxplot_precos_por_categoria.png)
+
+![Radar](radar_livros_por_categoria.png)
