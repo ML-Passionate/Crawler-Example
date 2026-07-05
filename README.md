@@ -11,7 +11,27 @@ O script:
    - nome do livro
    - preço do livro
    - quantidade de estrelas (avaliação)
-3. Monta um DataFrame do pandas com todos os dados coletados e grava um csv (por segurança)
+3. Monta um DataFrame do pandas com todos os dados coletados e grava  **livros_coletados.csv**
+
+| nome                                                                                              | preco | estrelas | categoria |
+|---------------------------------------------------------------------------------------------------|-------|----------|-----------|
+| It's Only the Himalayas                                                                           | 45.17 | 2        | Travel    |
+| Full Moon over Noahâs Ark: An Odyssey to Mount Ararat and Beyond                                  | 49.43 | 4        | Travel    |
+| See America: A Celebration of Our National Parks & Treasured Sites                                | 48.87 | 3        | Travel    |
+| Vagabonding: An Uncommon Guide to the Art of Long-Term World Travel                               | 36.94 | 2        | Travel    |
+| Under the Tuscan Sun                                                                              | 37.33 | 3        | Travel    |
+| A Summer In Europe                                                                                | 44.34 | 2        | Travel    |
+| The Great Railway Bazaar                                                                          | 30.54 | 1        | Travel    |
+| A Year in Provence (Provence #1)                                                                  | 56.88 | 4        | Travel    |
+| The Road to Little Dribbling: Adventures of an American in Britain (Notes From a Small Island #2) | 23.21 | 1        | Travel    |
+| Neither Here nor There: Travels in Europe                                                         | 38.95 | 3        | Travel    |
+| 1,000 Places to See Before You Die                                                                | 26.08 | 5        | Travel    |
+| Sharp Objects                                                                                     | 47.82 | 4        | Mystery   |
+| In a Dark, Dark Wood                                                                              | 19.63 | 1        | Mystery   |
+| The Past Never Ends                                                                               | 56.5  | 4        | Mystery   |
+| A Murder in Time                                                                                  | 16.64 | 1        | Mystery   |
+
+
 4. Gera um boxplot (seaborn) mostrando a distribuição de preços por categoria, em ordem crescente de preço médio
 5. Gera um gráfico de radar mostrando a quantidade de livros por categoria, para as 10 categorias mais importantes
 6. Gera um gráfico da distribuição de preços por estrelas
