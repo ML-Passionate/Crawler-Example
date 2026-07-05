@@ -33,9 +33,10 @@ O script:
 
 
 4. Gera um boxplot (seaborn) mostrando a distribuição de preços por categoria, em ordem crescente de preço médio
-5. Gera um gráfico de radar mostrando a quantidade de livros por categoria, para as 10 categorias mais importantes
-6. Gera um gráfico da distribuição de preços por estrelas
-7. Faz a correlação de pearson entra preço e estrelas e gera um heatmap
+5. Gera um boxplot (seaborn) mostrando a distribuição de estrelas por categoria, em ordem crescente da média de estrelas
+6. Gera um gráfico de radar mostrando a quantidade de livros por categoria, para as 10 categorias mais importantes
+7. Gera um gráfico da distribuição de preços por estrelas
+8. Faz a correlação de pearson entra preço e estrelas e gera um heatmap
 
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-green?style=for-the-badge&logo=python&logoColor=white)
 ![Requests](https://img.shields.io/badge/Requests-0052CC?style=for-the-badge&logo=git&logoColor=white)
@@ -51,6 +52,8 @@ O script:
 # Resultado - gráficos
 
 ![BoxPlot](boxplot_precos_por_categoria.png)
+
+![BoxPlot](boxplot_estrelas_por_categoria.png)
 
 ![Radar](radar_livros_por_categoria.png)
 
