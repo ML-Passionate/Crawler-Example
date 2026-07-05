@@ -1,15 +1,17 @@
+# %% [Célula 1] Importações
 """
 Crawler para o site https://books.toscrape.com/
 
-O script:
-1. Acessa a página inicial e descobre todas as categorias de livros.
-2. Para cada categoria, percorre todas as páginas (paginação) e coleta:
-   - nome do livro
-   - preço do livro
-   - quantidade de estrelas (avaliação)
+Este script foi dividido em células (marcadas com "# %%") para ser executado
+célula por célula no Spyder (Ctrl+Enter em cada uma, na ordem).
+
+Fluxo geral:
+1. Descobre todas as categorias de livros na página inicial.
+2. Para cada categoria, percorre todas as páginas (paginação) e coleta
+   nome, preço e quantidade de estrelas de cada livro.
 3. Monta um DataFrame do pandas com todos os dados coletados.
-4. Gera um boxplot (seaborn) mostrando a distribuição de preços por categoria.
-5. Gera um gráfico de radar mostrando a quantidade de livros por categoria.
+4. Gera um boxplot (seaborn) com a distribuição de preços por categoria.
+5. Gera um gráfico de radar com as top 10 categorias com mais livros.
 """
 
 import time
@@ -22,7 +24,8 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-#%%
+
+# %% [Célula 2] Configurações e constantes
 
 # URL base do site
 URL_BASE = "https://books.toscrape.com/"
@@ -37,12 +40,16 @@ MAPA_ESTRELAS = {
 }
 
 
+# %% [Célula 3] Função para requisitar e parsear páginas
+
 def obter_soup(url):
     """Faz a requisição HTTP para a URL informada e retorna um objeto BeautifulSoup."""
     resposta = requests.get(url, timeout=10)
     resposta.raise_for_status()
     return BeautifulSoup(resposta.text, "html.parser")
 
+
+# %% [Célula 4] Função para descobrir as categorias na página inicial
 
 def obter_categorias():
     """
@@ -62,6 +69,8 @@ def obter_categorias():
 
     return categorias
 
+
+# %% [Célula 5] Funções para extrair dados de cada livro (nome, preço, estrelas)
 
 def extrair_estrelas(tag_livro):
     """Extrai a quantidade de estrelas (1 a 5) a partir da classe CSS do elemento p.star-rating."""
@@ -91,6 +100,8 @@ def extrair_nome(tag_livro):
     # O atributo 'title' contém o nome completo do livro (sem truncamento)
     return tag_titulo["title"]
 
+
+# %% [Célula 6] Função para coletar todos os livros de uma categoria (com paginação)
 
 def coletar_livros_categoria(url_categoria):
     """
@@ -125,6 +136,8 @@ def coletar_livros_categoria(url_categoria):
     return livros
 
 
+# %% [Célula 7] Função para montar o DataFrame percorrendo todas as categorias
+
 def montar_dataframe():
     """Percorre todas as categorias e monta o DataFrame final com todos os livros."""
     categorias = obter_categorias()
@@ -143,6 +156,23 @@ def montar_dataframe():
     df = pd.DataFrame(todos_os_livros)
     return df
 
+
+# %% [Célula 8] Executa a coleta (pode demorar alguns minutos)
+
+# Esta célula efetivamente dispara as requisições ao site.
+# Rode-a apenas uma vez e reutilize "dataframe_livros" nas células seguintes.
+dataframe_livros = montar_dataframe()
+
+# Salva os dados coletados em um arquivo CSV para consulta posterior
+dataframe_livros.to_csv("livros_coletados.csv", index=False, encoding="utf-8-sig")
+print("Dados salvos em: livros_coletados.csv")
+
+# Exibe um resumo rápido dos dados coletados
+print(dataframe_livros.head())
+print(f"\nTotal de livros coletados: {len(dataframe_livros)}")
+
+
+# %% [Célula 9] Função e execução do boxplot (distribuição de preços por categoria)
 
 def gerar_boxplot(df):
     """Gera um boxplot único mostrando a distribuição de preços por categoria."""
@@ -166,6 +196,11 @@ def gerar_boxplot(df):
     print(f"Boxplot salvo em: {caminho_saida}")
     plt.show()
 
+
+gerar_boxplot(dataframe_livros)
+
+
+# %% [Célula 10] Função e execução do radar (top 10 categorias com mais livros)
 
 def gerar_radar(df, top_n=10):
     """Gera um gráfico de radar com a quantidade de livros das top_n categorias com mais livros."""
@@ -212,20 +247,53 @@ def gerar_radar(df, top_n=10):
     plt.show()
 
 
-if __name__ == "__main__":
-    # Monta o DataFrame com todos os livros de todas as categorias
-    dataframe_livros = montar_dataframe()
+gerar_radar(dataframe_livros)
 
-    # Salva os dados coletados em um arquivo CSV para consulta posterior
-    dataframe_livros.to_csv("livros_coletados.csv", index=False, encoding="utf-8-sig")
-    print("Dados salvos em: livros_coletados.csv")
 
-    # Exibe um resumo rápido dos dados coletados
-    print(dataframe_livros.head())
-    print(f"\nTotal de livros coletados: {len(dataframe_livros)}")
+# %% [Célula 11] Função e execução do scatter plot (preço vs. estrelas)
 
-    # Gera o gráfico boxplot com a distribuição de preços por categoria
-    gerar_boxplot(dataframe_livros)
+def gerar_scatter_preco_estrelas(df):
+    """Gera um scatter plot relacionando o preço de cada livro com sua quantidade de estrelas."""
+    plt.figure(figsize=(10, 6))
 
-    # Gera o gráfico de radar com a quantidade de livros por categoria
-    gerar_radar(dataframe_livros)
+    # Um pouco de "jitter" no eixo das estrelas ajuda a visualizar a densidade de pontos,
+    # já que estrelas são valores discretos (1 a 5) e muitos livros teriam o mesmo valor
+    estrelas_com_jitter = df["estrelas"] + np.random.uniform(-0.15, 0.15, size=len(df))
+
+    plt.scatter(estrelas_com_jitter, df["preco"], alpha=0.4, s=20)
+
+    plt.xlabel("Estrelas")
+    plt.ylabel("Preço (£)")
+    plt.title("Relação entre preço e avaliação (estrelas) dos livros")
+    plt.xticks([1, 2, 3, 4, 5])
+    plt.tight_layout()
+
+    caminho_saida = "scatter_preco_estrelas.png"
+    plt.savefig(caminho_saida, dpi=150)
+    print(f"Scatter plot salvo em: {caminho_saida}")
+    plt.show()
+
+
+gerar_scatter_preco_estrelas(dataframe_livros)
+
+
+# %% [Célula 12] Função e execução do heatmap de correlação (preço x estrelas)
+
+def gerar_heatmap_correlacao(df):
+    """Gera um heatmap com a correlação entre preço e estrelas."""
+    # Seleciona apenas as colunas numéricas de interesse
+    matriz_correlacao = df[["preco", "estrelas"]].corr()
+
+    plt.figure(figsize=(5, 4))
+    sns.heatmap(matriz_correlacao, annot=True, cmap="coolwarm", vmin=-1, vmax=1)
+
+    plt.title("Correlação entre preço e estrelas")
+    plt.tight_layout()
+
+    caminho_saida = "heatmap_correlacao_preco_estrelas.png"
+    plt.savefig(caminho_saida, dpi=150)
+    print(f"Heatmap salvo em: {caminho_saida}")
+    plt.show()
+
+
+gerar_heatmap_correlacao(dataframe_livros)
