@@ -60,3 +60,5 @@ O script:
 ![Radar](scatter_preco_estrelas.png)
 
 ![Radar](heatmap_correlacao_preco_estrelas.png)
+
+O coeficiente de Pearson obtido (r = 0,028) indica **ausência de associação linear relevante** entre preço e estrelas.
