@@ -56,10 +56,10 @@ O script:
 >**p-valor: 0.3736**
 
 Conclusão sobre as Hipóteses:
-Como o p-valor (0.3736) é MAIOR ou IGUAL ao nível de significância de 5.0%,
+Como o p-valor (0.3736) é MAIOR ao nível de significância de 5.0%,
 NÃO REJEITAMOS a hipótese nula (H0).
 
-**Conclusão**: Não há evidências estatísticas suficientes para afirmar que existe uma correlação linear entre o preço e a quantidade de estrelas dos livros.
+**Conclusão**: Não há evidências estatísticas suficientes para afirmar que existe uma correlação linear entre o preço e a satisfação (quantidade de estrelas dos livros).
 
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-green?style=for-the-badge&logo=python&logoColor=white)
 ![Requests](https://img.shields.io/badge/Requests-0052CC?style=for-the-badge&logo=git&logoColor=white)
