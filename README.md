@@ -1,5 +1,6 @@
 # 004-Crawler Example
-Exercicio de crawler para ler livros e gerar box-blot e radar.
+
+Exercício de crawler para ler livros e gerar box-blot e radar.
 
 Crawler para o site https://books.toscrape.com/
 
