@@ -59,6 +59,8 @@ O script:
 
 ![Radar](scatter_preco_estrelas.png)
 
+# Correlação entre preço e satisfação (estrelas)
+
 ![Radar](heatmap_correlacao_preco_estrelas.png)
 
 >[!WARNING]
