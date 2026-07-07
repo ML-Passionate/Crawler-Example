@@ -38,17 +38,6 @@ O script:
 7. Gera um gráfico da distribuição de preços por estrelas
 8. Faz a correlação de pearson entra preço e estrelas, gera o heatmap e calcula o pValue.
 
-![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-green?style=for-the-badge&logo=python&logoColor=white)
-![Requests](https://img.shields.io/badge/Requests-0052CC?style=for-the-badge&logo=git&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
-![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=python&logoColor=white)
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Status](https://img.shields.io/badge/status-finalizado-brightgreen?style=for-the-badge)
-![Release](https://img.shields.io/badge/release-v2.0-blue?style=for-the-badge)
-
 # Resultado - gráficos
 
 ![BoxPlot](boxplot_precos_por_categoria.png)
@@ -71,3 +60,14 @@ Como o p-valor (0.3736) é MAIOR ou IGUAL ao nível de significância de 5.0%,
 NÃO REJEITAMOS a hipótese nula (H0).
 
 **Conclusão**: Não há evidências estatísticas suficientes para afirmar que existe uma correlação linear entre o preço e a quantidade de estrelas dos livros.
+
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-green?style=for-the-badge&logo=python&logoColor=white)
+![Requests](https://img.shields.io/badge/Requests-0052CC?style=for-the-badge&logo=git&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=python&logoColor=white)
+
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Status](https://img.shields.io/badge/status-finalizado-brightgreen?style=for-the-badge)
+![Release](https://img.shields.io/badge/release-v2.0-blue?style=for-the-badge)
