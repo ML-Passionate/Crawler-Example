@@ -36,7 +36,7 @@ O script:
 5. Gera um boxplot (seaborn) mostrando a distribuição de estrelas por categoria, em ordem crescente da média de estrelas
 6. Gera um gráfico de radar mostrando a quantidade de livros por categoria, para as 10 categorias mais importantes
 7. Gera um gráfico da distribuição de preços por estrelas
-8. Faz a correlação de pearson entra preço e estrelas e gera um heatmap
+8. Faz a correlação de pearson entra preço e estrelas, gera o heatmap e calcula o pValue.
 
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-green?style=for-the-badge&logo=python&logoColor=white)
 ![Requests](https://img.shields.io/badge/Requests-0052CC?style=for-the-badge&logo=git&logoColor=white)
@@ -61,4 +61,11 @@ O script:
 
 ![Radar](heatmap_correlacao_preco_estrelas.png)
 
-O coeficiente de Pearson obtido (r = 0,028) indica **ausência de associação linear relevante** entre preço e estrelas.
+>[!WARNING]
+>**p-valor: 0.3736**
+
+Conclusão sobre as Hipóteses:
+Como o p-valor (0.3736) é MAIOR ou IGUAL ao nível de significância de 5.0%,
+NÃO REJEITAMOS a hipótese nula (H0).
+
+**Conclusão**: Não há evidências estatísticas suficientes para afirmar que existe uma correlação linear entre o preço e a quantidade de estrelas dos livros.
