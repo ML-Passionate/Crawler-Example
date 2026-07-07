@@ -6,7 +6,8 @@ Crawler para o site https://books.toscrape.com/
 
 ![Books](Books.png)
 
-O script:
+O script crawler_books.py :
+
 1. Acessa a página inicial e descobre todas as categorias de livros.
 2. Para cada categoria, percorre todas as páginas (paginação) e coleta:
    - nome do livro
