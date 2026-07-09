@@ -57,7 +57,6 @@ O script crawler_books.py :
 >[!WARNING]
 >**p-valor: 0.3736**
 
-Conclusão sobre as Hipóteses:
 Como o p-valor (0.3736) é MAIOR que o nível de significância de 5.0%, NÃO REJEITAMOS a hipótese nula (H0).
 
 **Conclusão**: Não há evidências estatísticas suficientes para afirmar que existe uma correlação linear entre o preço e a satisfação (quantidade de estrelas dos livros).
