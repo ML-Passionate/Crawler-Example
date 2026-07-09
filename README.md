@@ -57,15 +57,16 @@ O script crawler_books.py :
 >[!WARNING]
 >**p-valor: 0.3736**
 
-Como o p-valor (0.3736) é MAIOR que o nível de significância de 5.0%, NÃO REJEITAMOS a hipótese nula (H0).
+Como o p-valor (0.3736) é MAIOR que o nível de significância de 5.0%, NÃO REJEITAMOS a hipótese nula H0 (aleatória).
 
-**Conclusão**: Não há evidências estatísticas suficientes para afirmar que existe uma correlação linear entre o preço e a satisfação (quantidade de estrelas dos livros).
+**Conclusão**: Não há evidência estatística para afirmar que existe uma correlação linear entre o preço e a satisfação (quantidade de estrelas dos livros).
 
 ![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-green?style=for-the-badge&logo=python&logoColor=white)
 ![Requests](https://img.shields.io/badge/Requests-0052CC?style=for-the-badge&logo=git&logoColor=white)
 ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%2320232a?style=for-the-badge&logo=matplotlib&logoColor=white)
 ![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=python&logoColor=white)
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
