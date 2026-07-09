@@ -48,9 +48,9 @@ O script crawler_books.py :
 
 ![Radar](radar_livros_por_categoria.png)
 
-![Radar](scatter_preco_estrelas.png)
-
 # Correlação entre preço e satisfação (estrelas)
+
+![Radar](scatter_preco_estrelas.png)
 
 ![Radar](heatmap_correlacao_preco_estrelas.png)
 
