@@ -1,4 +1,4 @@
-# Crawler Exemplo
+# Crawler de Exemplo
 
 Exercício de crawler para ler livros e gerar box-blot e radar.
 
