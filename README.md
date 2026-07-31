@@ -1,4 +1,4 @@
-# Crawler de Exemplo
+# Crawler de Exemplo em python
 
 Exercício de crawler para ler livros e gerar box-blot e radar.
 
